@@ -1,44 +1,12 @@
-import React, { Fragment, useState, useRef } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import FreeMask from 'react-freemask';
-import 'react-freemask/src/static/css/react-freemask.css';
-import 'react-freemask/src/static/css/react-freemask.bootstrap.css';
-import 'react-freemask/src/static/css/react-freemask.material.css';
-
-function FreeMaskSetValue() {
-  const [value, setValue] = useState(0);
-
-  return (
-    <Fragment>
-      <FreeMask
-        segments={['?size', ' mm']}
-        value={{ size: value }}
-        onChange={() => {}}
-      />
-      <br />
-      <button onClick={() => setValue(value + 1)}>+</button>{' '}
-      <button onClick={() => setValue(value - 1)}>-</button>
-    </Fragment>
-  );
-}
-
-function FreeMaskGetValue() {
-  const ref = useRef(null);
-
-  return (
-    <Fragment>
-      <FreeMask
-        ref={ref}
-        segments={['?size', ' mm ', '?duration', ' week']}
-        value={{ size: 123, duration: 2 }}
-        onChange={() => {}}
-      />
-      <br />
-      <button onClick={() => alert(ref.current.value)}>get value</button>
-    </Fragment>
-  );
-}
+import './../src/static/css/react-freemask.css';
+import './../src/static/css/react-freemask.bootstrap.css';
+import './../src/static/css/react-freemask.material.css';
+import FreeMask from './../src/FreeMask';
+import FreeMaskSetValue from './FreeMaskSetValue';
+import FreeMaskGetValue from './FreeMaskGetValue';
 
 storiesOf('FreeMask', module)
   .add('default', () => <FreeMask segments={['?size', ' mm']} />)

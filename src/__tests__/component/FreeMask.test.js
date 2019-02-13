@@ -33,13 +33,9 @@ describe('FreeMask', () => {
   });
 
   describe('value', () => {
-    let wrapper;
-
-    beforeEach(() => {
-      wrapper = shallow(
-        <FreeMask segments={['?value']} onKeyDown={anonFunc} />,
-      );
-    });
+    const wrapper = shallow(
+      <FreeMask segments={['?value']} onKeyDown={anonFunc} />,
+    );
 
     test('is ``', () => {
       expect(wrapper.state('value')).toEqual({ value: '' });
@@ -52,13 +48,9 @@ describe('FreeMask', () => {
   });
 
   describe('theme', () => {
-    let wrapper;
-
-    beforeEach(() => {
-      wrapper = shallow(
-        <FreeMask segments={['?value']} onKeyDown={anonFunc} />,
-      );
-    });
+    const wrapper = shallow(
+      <FreeMask segments={['?value']} onKeyDown={anonFunc} />,
+    );
 
     test('is undefined', () => {
       expect(wrapper.props().theme).toBeUndefined();

@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "storybook:build": "build-storybook -c .storybook -o .storybook-build",
+    "storybook:build": "rimraf .storybook-build && build-storybook -c .storybook -o .storybook-build",
     "test": "jest",
     "build:js": "rollup -c",
     "build:css": "gulp",
@@ -28,7 +28,8 @@
     "deploy:req:readme": "ncp README.md npm/README.md",
     "deploy:req:pkg": "ncp package.json npm/package.json",
     "predeploy": "yarn deploy:clear && yarn deploy:req:demo && yarn deploy:req:license && yarn deploy:req:readme && yarn deploy:req:pkg",
-    "deploy": "cd npm && yarn publish"
+    "deploy": "cd npm && yarn publish",
+    "postdeploy": "yarn deploy:clear"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,7 +52,6 @@
     "gulp": "^4.0.0",
     "gulp-csso": "^3.0.1",
     "gulp-rename": "^1.4.0",
-    "mkdirp": "^0.5.1",
     "ncp": "^2.0.0",
     "react-dom": "16.8.1",
     "react-scripts": "^2.1.3",

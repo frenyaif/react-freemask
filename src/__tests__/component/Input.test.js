@@ -21,20 +21,16 @@ test('Input snapshot', () => {
 });
 
 describe('Input value', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = mount(
-      <Input
-        value="foo"
-        isResetValue={false}
-        onFocus={anonFunc}
-        onBlur={anonFunc}
-        onInput={anonFunc}
-        onKeyDown={anonFunc}
-      />,
-    );
-  });
+  const wrapper = mount(
+    <Input
+      value="foo"
+      isResetValue={false}
+      onFocus={anonFunc}
+      onBlur={anonFunc}
+      onInput={anonFunc}
+      onKeyDown={anonFunc}
+    />,
+  );
 
   test('is `foo`', () => {
     expect(wrapper.text()).toEqual('foo');
@@ -47,13 +43,11 @@ describe('Input value', () => {
 });
 
 describe('Input action', () => {
-  beforeEach(() => {
-    window.getSelection = () => ({
-      removeAllRanges: jest.fn(),
-      getRangeAt: () => ({
-        endOffset: 0,
-      }),
-    });
+  window.getSelection = () => ({
+    removeAllRanges: jest.fn(),
+    getRangeAt: () => ({
+      endOffset: 0,
+    }),
   });
 
   test('focus', () => {
