@@ -1,0 +1,14 @@
+node_modules
+
+/.storybook-build
+
+/npm/build
+/npm/demo.gif
+/npm/LICENSE
+/npm/package.json
+/npm/README.md
+
+/src/__tests__/component/__snapshots__
+
+yarn-debug.log*
+yarn-error.log*

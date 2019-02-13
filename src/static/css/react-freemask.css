@@ -1,0 +1,48 @@
+.freemask {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background-color: white;
+  border: 1px solid #666;
+  display: inline-block;
+  width: 155px;
+  height: 18px;
+  padding: 1px 2px;
+  cursor: text;
+  overflow: hidden;
+}
+
+.freemask--hover {
+  border-color: dodgerblue;
+}
+
+.freemask--focus {
+  border-color: dodgerblue;
+  box-shadow: 0 0 0 0.03em dodgerblue;
+  border-radius: 0.035em;
+}
+
+.freemask__segment-wrapper {
+  width: 10000px;
+}
+
+.freemask__input {
+  display: inline;
+  outline: none;
+  padding: 0 5px;
+  text-align: center;
+  border-bottom: 1px solid #666;
+  white-space: nowrap;
+}
+
+.freemask__input br {
+  display: none;
+}
+
+.freemask__input * {
+  display: inline;
+  white-space: nowrap;
+}
+
+.freemask__text {
+  display: inline-block;
+}
