@@ -235,7 +235,7 @@ class FreeMask extends PureComponent {
       const value = this.state.value;
       const input = this.input;
       const setValue = this._setValue;
-      console.log('cok');
+
       const segmentValue =
         null !== input[segmentName].current
           ? input[segmentName].current.innerHTML
